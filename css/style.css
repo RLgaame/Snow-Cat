@@ -52,7 +52,7 @@ body {
     border-bottom: 20px solid rgb(255, 255, 255);
     margin: 0 auto;
     position: relative;
-    background-image: linear-gradient(rgb(255, 255, 255), rgb(185, 185, 185));
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(204, 204, 204));
     overflow: hidden; /* Impede que o conteúdo ultrapasse os limites */
     padding-top: 50px;
 }
@@ -71,7 +71,7 @@ button:hover {
     width: 80px;
     bottom: 0;
     animation: game 1.5s infinite linear;
-    transform: scale(5.0) translateY(-11px); /* Suspende a imagem um pouco para cima */
+    transform: scale(5.0) translateY(-10px); /* Suspende a imagem um pouco para cima */
 
               
 }
@@ -248,3 +248,6 @@ button:hover {
         width: 300px;
     }
 }
+
+
+    
