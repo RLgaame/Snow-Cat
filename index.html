@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>   
+</head> 
+<body>
     <style>
-
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-
         body{
-    
+            background-image: url();
             background-repeat: no-repeat;
             background-size: cover;      /* Faz a imagem cobrir toda a tela */
             background-position: center; /* Centraliza a imagem */
@@ -18,89 +19,67 @@
             margin: 0;                    /* Remove margens do body */
             padding: 0;                   /* Remove o padding do body */
             box-sizing: border-box;       /* Garante que o padding e border não afetem as dimensões */
-
-        
-
-        }
-        
-
-        /* Resetando margens e padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
-        /* Estilo do fundo do site */
-        .gamer-board {
-            width: 100%;
-            min-height: 100vh; /* Usando altura mínima total da tela */
-            margin: 0 auto;
-            position: relative;
-            background-attachment: fixed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding-bottom: 10px; /* Adicionando espaçamento para a borda não sobrepor o conteúdo */
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
-        /* Estilo da pessoa */
-        .pessoa img {
-            max-width: 100%; /* Responsivo para largura da tela */
-            height: auto; /* Manter a proporção */
-            max-width: 150px; /* Largura máxima da imagem */
-            transform: scale(1.7) translateY(-45px); /* Suspende a imagem um pouco para cima */
-            mix-blend-mode: multiply;
-
-        }
-
-        /* Estilo do botão */
-       
-
-        a:hover {
-            color: rgb(252, 174, 174);
-
-        }
-
-        /* Estilo do link */
-        a {
+        div{
             font-family: "Orbitron", sans-serif;
-            text-decoration: none;
-            font-style: italic;
-            font-size: 40px;
-            color: rgb(255, 0, 0);
-
         }
 
-        /* Estilo para telas pequenas (como smartphones) */
-        @media (max-width: 600px) {
-            .gamer-board {
-                min-height: 100vh; /* Garante que a altura mínima seja 100vh, mesmo em telas pequenas */
-                padding: 20px;
-            }
-
-            .pessoa img {
-                max-width: 120px; /* Ajustando o tamanho da imagem em telas pequenas */
-            }
-
-            button {
-                font-size: 14px; /* Ajustando o tamanho da fonte do botão */
-                padding: 12px 24px; /* Ajustando o tamanho do botão */
-                width: 100%; /* O botão vai ocupar toda a largura disponível */
-            }
+        .level-up-message {
+            color: #0066ff;             /* Cor roxa */
+            font-size: 32px;            /* Tamanho da fonte */
+            font-weight: bold;          /* Peso da fonte */
+            text-align: center;         /* Centraliza o texto */
+            position: absolute;         /* Permite posicionar no centro da tela */
+            top: 50%;                   /* Centraliza verticalmente */
+            left: 50%;                  /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%); /* Ajusta o alinhamento */
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Sombra para dar destaque */
         }
+
+        button {
+            background-color: #fd6565; /* Cor de fundo */
+            color: white;              /* Cor do texto */
+            border: none;              /* Sem borda */
+            padding: 10px 20px;        /* Espaçamento interno */
+            font-size: 16px;           /* Tamanho da fonte */
+            cursor: pointer;          /* Cursor de mão ao passar o mouse */
+            border-radius: 5px;        /* Borda arredondada */
+            transition: background-color 0.3s; /* Efeito ao passar o mouse */
+        }
+
+        button:hover {
+            background-color: #e27d7d; /* Cor de fundo ao passar o mouse */
+        }
+
     </style>
-</head>
-<body>
 
     <div class="gamer-board">
-        <div class="pessoa">
-            <img src="pessoa.gif" alt="Pessoa">
-        </div>
-            <a href="teste.html"><strong>Play</strong></a>    
-    </div>
+        <img src="nuvem.png" class="nuvem">
+        <img src="pessoa/pessoa.gif" class="pessoa">
+        <img src="quadrado.png" class="quadrado">
 
+        <!-- Botão para recarregar a página -->
+        <button onclick="window.location.reload();"><strong>Jogar novamente</strong></button>
+
+        <div id="levelUpMessage" class="level-up-message"></div>
+
+        <div id="jumpCount">Pulos: 0</div>
+        <div id="level">Nível: 1</div>
+        <div id="gameOverMessage"></div>
+
+        <div class="body">
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+        </div>
+    </div>
 </body>
 </html>
+
 
